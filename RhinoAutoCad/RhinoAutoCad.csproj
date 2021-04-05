@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA7BCAD2-AF58-400D-B045-6DBF9D6FC243}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RhinoAutoCad</RootNamespace>
+    <AssemblyName>RhinoAutoCad</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\AppData\Roaming\Grasshopper\Libraries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="RhinoCommon">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadWork\System\rhinocommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grasshopper">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadWork\Plug-ins\Grasshopper\Grasshopper.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GH_IO">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CadWork\Plug-ins\Grasshopper\GH_IO.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RhinoAutoCadComponent.cs" />
+    <Compile Include="RhinoAutoCadInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoCAD.NET">
+      <Version>24.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AutoCAD">
+      <Guid>{E2077CF2-3573-4E66-B1DC-01118675056D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AXDBLib">
+      <Guid>{C5661B4E-34DA-4F36-8D82-AB2BFBF4B1F1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).gha"
+Erase "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <FallbackCulture>en-US</FallbackCulture>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartProgram>E:\CadWork\System\Rhino.exe</StartProgram>
+    <StartArguments>
+    </StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+</Project>

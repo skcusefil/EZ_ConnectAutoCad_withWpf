@@ -1,0 +1,22 @@
+﻿<Window x:Class="CallAutoCad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CallAutoCad"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Height="41" Margin="89,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="25"/>
+        <Label Content="Circle Radius" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,40,0,0" Height="51" RenderTransformOrigin="-0.321,0.446" Width="185" FontSize="25"/>
+        <Button x:Name="CreateCircle" Content="Create Circle" HorizontalAlignment="Left" Margin="472,81,0,0" VerticalAlignment="Top" Width="244" FontSize="25" Height="56" Click="CreateCircle_Click"/>
+        <TextBox x:Name="pointX" HorizontalAlignment="Left" Height="51" Margin="145,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="25"/>
+        <Label Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,234,0,0" Height="51" RenderTransformOrigin="-0.321,0.446" Width="40" FontSize="25"/>
+        <TextBox x:Name="pointY" HorizontalAlignment="Left" Height="51" Margin="145,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="25"/>
+        <Label Content="Y" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,290,0,0" Height="51" RenderTransformOrigin="-0.321,0.446" Width="40" FontSize="25"/>
+        <TextBox x:Name="pointZ" HorizontalAlignment="Left" Height="51" Margin="145,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" FontSize="25"/>
+        <Label Content="Z" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,346,0,0" Height="51" RenderTransformOrigin="-0.321,0.446" Width="40" FontSize="25"/>
+        <Label Content="Center Point" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="89,175,0,0" Height="51" RenderTransformOrigin="-0.321,0.446" Width="185" FontSize="25"/>
+
+    </Grid>
+</Window>
